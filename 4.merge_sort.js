@@ -28,7 +28,9 @@ function mergeSortRecurssion(arr) {
   let mid = Math.floor(arr.length / 2);
   let left = arr.slice(0, mid);
   let right = arr.slice(mid);
-  return mergeSort(left, right);
+  let leftSorted = mergeSortRecurssion(left)
+  let rightSorted = mergeSortRecurssion(right)
+  return mergeSort(leftSorted, rightSorted)
 }
 
 mergeSortRecurssion([2, 4, 6, 1, 3, 5, 7]);
